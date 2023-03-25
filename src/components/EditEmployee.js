@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function EditEmployee() {
+function EditEmployee(props) {
+  const [name, setName] = useState(props.name);
+  const [role, setRole] = useState(props.role);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -25,7 +26,14 @@ function EditEmployee() {
           <Modal.Title>Update Employee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form id='editModal' className='w-full max-w-sm'>
+          <form
+            onSubmit={(input) => {
+              input.preventDefault();
+              props.updateEmployee(props.id, name, role);
+            }}
+            id='editModal'
+            className='w-full max-w-sm'
+          >
             <div className='mb-6 md:flex md:items-center'>
               <div className='md:w-1/3'>
                 <label
@@ -37,10 +45,13 @@ function EditEmployee() {
               </div>
               <div className='md:w-2/3'>
                 <input
-                  className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-4 leading-tight text-gray-700 focus:border-purple-500 focus:bg-white focus:outline-none'
+                  className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-700 focus:border-orange-800 focus:bg-white focus:outline-none'
                   id='name'
                   type='text'
-                  value='Name'
+                  defaultValue={name}
+                  onChange={(input) => {
+                    setName(input.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -55,10 +66,13 @@ function EditEmployee() {
               </div>
               <div className='md:w-2/3'>
                 <input
-                  className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-4 leading-tight text-gray-700 focus:border-purple-500 focus:bg-white focus:outline-none'
+                  className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-700 focus:border-orange-800 focus:bg-white focus:outline-none'
                   id='role'
                   type='text'
-                  value='Role'
+                  defaultValue={role}
+                  onChange={(input) => {
+                    setRole(input.target.value);
+                  }}
                 />
               </div>
             </div>
