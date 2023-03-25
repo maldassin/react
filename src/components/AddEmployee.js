@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 
-function EditEmployee(props) {
-  const [name, setName] = useState(props.name);
-  const [role, setRole] = useState(props.role);
+function AddEmployee(props) {
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
+  const [img, setImg] = useState("");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -12,9 +13,9 @@ function EditEmployee(props) {
     <>
       <button
         onClick={handleShow}
-        className='rounded-full px-4 py-1 text-sm font-semibold text-orange-600 hover:bg-trueGray-900 hover:text-orange-200 focus:outline-none'
+        className='mt-2 rounded bg-orange-800 py-2 px-4 font-medium text-white hover:bg-orange-900'
       >
-        Edit
+        + Add Employee
       </button>
       <Modal
         show={show}
@@ -23,13 +24,16 @@ function EditEmployee(props) {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title>Update Employee</Modal.Title>
+          <Modal.Title>Add Employee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form
             onSubmit={(input) => {
               input.preventDefault();
-              props.updateEmployee(props.id, name, role);
+              setName("");
+              setRole("");
+              setImg("");
+              props.addEmployee(name, role, img);
             }}
             id='editModal'
             className='w-full max-w-sm'
@@ -48,6 +52,7 @@ function EditEmployee(props) {
                   className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-700 focus:border-orange-800 focus:bg-white focus:outline-none'
                   id='name'
                   type='text'
+                  placeholder='John Doe'
                   defaultValue={name}
                   onChange={(input) => {
                     setName(input.target.value);
@@ -69,9 +74,32 @@ function EditEmployee(props) {
                   className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-700 focus:border-orange-800 focus:bg-white focus:outline-none'
                   id='role'
                   type='text'
+                  placeholder='Senior Eater'
                   defaultValue={role}
                   onChange={(input) => {
                     setRole(input.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <div className='mb-6 md:flex md:items-center'>
+              <div className='md:w-1/3'>
+                <label
+                  className='mb-1 block pr-4 font-bold text-gray-500 md:mb-0 md:text-right'
+                  for='img'
+                >
+                  Image URL
+                </label>
+              </div>
+              <div className='md:w-2/3'>
+                <input
+                  className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-700 focus:border-orange-800 focus:bg-white focus:outline-none'
+                  id='img'
+                  type='url'
+                  placeholder='https://rickroll.com'
+                  defaultValue={img}
+                  onChange={(input) => {
+                    setImg(input.target.value);
                   }}
                 />
               </div>
@@ -84,14 +112,14 @@ function EditEmployee(props) {
             className='rounded border-2 py-2 px-4 font-medium text-orange-900 
             hover:bg-gray-100'
           >
-            Cancel
+            Close
           </button>
           <button
             onClick={handleClose}
             form='editModal'
             className='rounded bg-orange-800 py-2 px-4 font-medium text-white hover:bg-orange-900'
           >
-            Update
+            Add
           </button>
         </Modal.Footer>
       </Modal>
@@ -99,4 +127,4 @@ function EditEmployee(props) {
   );
 }
 
-export default EditEmployee;
+export default AddEmployee;
