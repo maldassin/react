@@ -132,7 +132,7 @@ function Employees() {
         </div>
       ) : (
         <div className='flex h-screen items-center justify-center'>
-          <p className='text-2xl font-semibold'>Access denied.</p>
+          <p className='text-2xl font-semibold text-white'>Access denied.</p>
         </div>
       )}
     </div>
