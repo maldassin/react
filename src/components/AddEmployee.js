@@ -13,7 +13,7 @@ function AddEmployee(props) {
     <>
       <button
         onClick={handleShow}
-        className='mt-2 rounded bg-orange-800 py-2 px-4 font-medium text-white hover:bg-orange-900'
+        className='mt-2 rounded bg-blue-900 py-2 px-4 font-medium text-white hover:bg-orange-900'
       >
         + Add Employee
       </button>

@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import AddEmployee from "./components/AddEmployee";
 import EditEmployee from "./components/EditEmployee";
 import Employee from "./components/Employee";
+import Header from "./components/Header";
 import "./index.css";
 
 function App() {
@@ -121,6 +122,7 @@ function App() {
   const showEmployees = true;
   return (
     <div className='App'>
+      <Header />
       {showEmployees ? (
         <div className='p-2 text-center'>
           {/* <input

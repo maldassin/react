@@ -1,8 +1,6 @@
-import EditEmployee from "./EditEmployee";
-
 function Employee(props) {
   return (
-    <div className='mx-3 my-3 flex min-w-[350px] max-w-[350px] justify-evenly space-y-2 rounded-xl bg-trueGray-700 py-2 px-2 shadow-lg sm:flex sm:items-center sm:space-y-0 sm:space-x-6 sm:py-4'>
+    <div className='mx-3 my-3 flex min-w-[350px] max-w-[350px] justify-evenly space-y-2 rounded-xl bg-gray-700 py-2 px-2 shadow-lg sm:flex sm:items-center sm:space-y-0 sm:space-x-6 sm:py-4'>
       <img
         className='block h-[100px] w-[100px] rounded-full object-cover sm:mx-0 sm:shrink-0'
         src={props.img}
