@@ -1,8 +1,8 @@
 import { useState } from "react";
-import AddEmployee from "./components/AddEmployee";
-import Employee from "./components/Employee";
-import EditEmployee from "./components/EditEmployee";
 import { v4 as uuidv4 } from "uuid";
+import AddEmployee from "./components/AddEmployee";
+import EditEmployee from "./components/EditEmployee";
+import Employee from "./components/Employee";
 import "./index.css";
 
 function App() {
@@ -24,6 +24,60 @@ function App() {
       name: "Edie",
       role: "Scrum Master",
       img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=1000&q=60",
+    },
+    {
+      id: 4,
+      name: "Beck",
+      role: "DevOps Engineer",
+      img: "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=1000&q=60",
+    },
+    {
+      id: 5,
+      name: "Rosa",
+      role: "Senior full stack",
+      img: "https://images.unsplash.com/photo-1530785602389-07594beb8b73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=1000&q=60",
+    },
+    {
+      id: 6,
+      name: "Max",
+      role: "Senior backend engineer",
+      img: "./Max.png",
+    },
+    {
+      id: 4,
+      name: "Beck",
+      role: "DevOps Engineer",
+      img: "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=1000&q=60",
+    },
+    {
+      id: 5,
+      name: "Rosa",
+      role: "Senior full stack",
+      img: "https://images.unsplash.com/photo-1530785602389-07594beb8b73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=1000&q=60",
+    },
+    {
+      id: 6,
+      name: "Max",
+      role: "Senior backend engineer",
+      img: "./Max.png",
+    },
+    {
+      id: 4,
+      name: "Beck",
+      role: "DevOps Engineer",
+      img: "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=1000&q=60",
+    },
+    {
+      id: 5,
+      name: "Rosa",
+      role: "Senior full stack",
+      img: "https://images.unsplash.com/photo-1530785602389-07594beb8b73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=1000&q=60",
+    },
+    {
+      id: 6,
+      name: "Max",
+      role: "Senior backend engineer",
+      img: "./Max.png",
     },
     {
       id: 4,
@@ -92,7 +146,7 @@ function App() {
                   name={employee.name}
                   role={employee.role}
                   img={employee.img}
-                  updateEmployee={editEmployee}
+                  editEmployee={updateEmployee}
                 />
               );
             })}
