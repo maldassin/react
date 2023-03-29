@@ -102,7 +102,7 @@ function Employees() {
 
   const showEmployees = true;
   return (
-    <div className='App h-screen'>
+    <div className='min-h-screen'>
       {showEmployees ? (
         <div className='p-2 text-center'>
           <AddEmployee addEmployee={addEmployee} />
