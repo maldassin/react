@@ -52,7 +52,7 @@ function AddEmployee(props) {
                   className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-700 focus:border-blue-900 focus:bg-white focus:outline-none'
                   id='name'
                   type='text'
-                  placeholder='John Doe'
+                  placeholder='Maen Dassin'
                   defaultValue={name}
                   onChange={(input) => {
                     setName(input.target.value);

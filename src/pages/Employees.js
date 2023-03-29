@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import AddEmployee from "./AddEmployee";
-import EditEmployee from "./EditEmployee";
-import Employee from "./Employee";
-import Header from "./Header";
 import "../index.css";
+import AddEmployee from "../components/AddEmployee";
+import EditEmployee from "../components/EditEmployee";
+import Employee from "../components/Employee";
 
 function Employees() {
   const [employees, setEmployees] = useState([
@@ -103,7 +102,7 @@ function Employees() {
 
   const showEmployees = true;
   return (
-    <div className='App'>
+    <div className='App h-screen'>
       {showEmployees ? (
         <div className='p-2 text-center'>
           <AddEmployee addEmployee={addEmployee} />

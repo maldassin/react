@@ -1,12 +1,13 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { NavLink } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Employees", href: "/employees" },
+  { name: "Customers", href: "/customers" },
+  { name: "Projects", href: "#" },
+  { name: "Calendar", href: "#" },
 ];
 
 function classNames(...classes) {
@@ -37,18 +38,18 @@ export default function Header(props) {
                     <img
                       className='block h-10 w-auto lg:hidden'
                       src='./favicon.ico'
-                      alt='Your Company'
+                      alt='Maen Dassin'
                     />
                     <img
                       className='hidden h-10 w-auto lg:block'
                       src='./favicon.ico'
-                      alt='Your Company'
+                      alt='Maen Dassin'
                     />
                   </div>
                   <div className='hidden sm:ml-6 sm:block'>
                     <div className='flex space-x-4'>
                       {navigation.map((item) => (
-                        <a
+                        <NavLink
                           key={item.name}
                           href={item.href}
                           className={classNames(
@@ -60,7 +61,7 @@ export default function Header(props) {
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
-                        </a>
+                        </NavLink>
                       ))}
                     </div>
                   </div>
@@ -165,6 +166,7 @@ export default function Header(props) {
         )}
       </Disclosure>
       <div>{props.children};</div>
+      <footer className='bg-gray-800'>Hey</footer>
     </>
   );
 }
