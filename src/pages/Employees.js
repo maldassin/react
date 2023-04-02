@@ -102,9 +102,9 @@ function Employees() {
 
   const showEmployees = true;
   return (
-    <div className='min-h-screen'>
+    <>
       {showEmployees ? (
-        <div className='p-2 text-center'>
+        <div className='text-center'>
           <AddEmployee addEmployee={addEmployee} />
           <div className='mx-10 flex flex-wrap justify-center'>
             {employees.map((employee) => {
@@ -134,7 +134,7 @@ function Employees() {
           <p className='text-2xl font-semibold text-white'>Access denied.</p>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

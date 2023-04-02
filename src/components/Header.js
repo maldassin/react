@@ -1,12 +1,11 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 
 const navigation = [
   { name: "Employees", href: "/employees" },
   { name: "Customers", href: "/customers" },
-  { name: "Projects", href: "/other" },
+  { name: "Dictionary", href: "/dictionary" },
   { name: "Calendar", href: "/other2" },
 ];
 
@@ -115,7 +114,7 @@ export default function Header(props) {
           </>
         )}
       </Disclosure>
-      <div>{props.children}</div>
+      <div className='min-h-screen p-3'>{props.children}</div>
       <footer className='sticky bottom-0 bg-gray-800 py-2 text-center text-white'></footer>
     </>
   );

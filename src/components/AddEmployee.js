@@ -13,7 +13,7 @@ function AddEmployee(props) {
     <>
       <button
         onClick={handleShow}
-        className='my-2 rounded bg-blue-800 py-2 px-4 font-medium text-white hover:bg-blue-900'
+        className='my-1 rounded bg-blue-800 py-2 px-4 font-medium text-white hover:bg-blue-900'
       >
         + Add Employee
       </button>
@@ -24,7 +24,7 @@ function AddEmployee(props) {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title>Add Employee</Modal.Title>
+          <Modal.Title className='text-black'>Add Employee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form

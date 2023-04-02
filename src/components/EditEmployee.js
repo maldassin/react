@@ -23,7 +23,7 @@ function EditEmployee(props) {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title>Update Employee</Modal.Title>
+          <Modal.Title className='text-black'>Update Employee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form
