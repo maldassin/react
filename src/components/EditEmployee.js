@@ -22,10 +22,10 @@ function EditEmployee(props) {
         backdrop='static'
         keyboard={false}
       >
-        <Modal.Header>
-          <Modal.Title className='text-black'>Update Employee</Modal.Title>
+        <Modal.Header className='text-whte bg-gray-800'>
+          <Modal.Title>Update Employee</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className='text-whte bg-gray-800'>
           <form
             onSubmit={(input) => {
               input.preventDefault();
@@ -37,7 +37,7 @@ function EditEmployee(props) {
             <div className='mb-6 md:flex md:items-center'>
               <div className='md:w-1/3'>
                 <label
-                  className='mb-1 block pr-4 font-bold text-gray-500 md:mb-0 md:text-right'
+                  className='mb-1 block pr-4 font-semibold md:mb-0 md:text-right'
                   htmlFor='name'
                 >
                   Name
@@ -45,7 +45,7 @@ function EditEmployee(props) {
               </div>
               <div className='md:w-2/3'>
                 <input
-                  className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-700 focus:border-blue-900 focus:bg-white focus:outline-none'
+                  className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-600 focus:border-blue-900 focus:bg-white focus:outline-none'
                   id='name'
                   type='text'
                   defaultValue={name}
@@ -58,7 +58,7 @@ function EditEmployee(props) {
             <div className='mb-6 md:flex md:items-center'>
               <div className='md:w-1/3'>
                 <label
-                  className='mb-1 block pr-4 font-bold text-gray-500 md:mb-0 md:text-right'
+                  className='mb-1 block pr-4 font-semibold md:mb-0 md:text-right'
                   htmlFor='role'
                 >
                   Role
@@ -66,7 +66,7 @@ function EditEmployee(props) {
               </div>
               <div className='md:w-2/3'>
                 <input
-                  className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-700 focus:border-blue-900 focus:bg-white focus:outline-none'
+                  className='w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-2 leading-tight text-gray-600 focus:border-blue-900 focus:bg-white focus:outline-none'
                   id='role'
                   type='text'
                   defaultValue={role}
@@ -78,11 +78,11 @@ function EditEmployee(props) {
             </div>
           </form>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className='bg-gray-800 text-white'>
           <button
             onClick={handleClose}
-            className='rounded border-2 py-2 px-4 font-medium text-blue-800 
-            hover:bg-gray-100'
+            className='rounded border-2 border-gray-500 py-2 px-4 font-medium 
+            hover:bg-gray-900'
           >
             Close
           </button>
